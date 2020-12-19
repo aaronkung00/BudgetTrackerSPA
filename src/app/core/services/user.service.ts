@@ -14,4 +14,9 @@ export class UserService {
     return this.apiService.getAll('users');
   }
 
+  getOneUsers(id : number) : Observable<User>{
+    return this.apiService.getOne('users',id);
+  }
+
+
 }

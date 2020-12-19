@@ -1,1 +1,22 @@
-<p>home works!</p>
+<p>Table is just a mapping of objects to table rows with <code>ngFor</code></p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">S.N</th>
+    <th scope="col">User</th>
+    <th scope="col">Email ID</th>
+    <th scope="col">Total Income</th>
+    <th scope="col">Total Expense</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{user.fullName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.TotalIncome }}</td>
+    <td>{{user.TotalExpense }}</td>
+  </tr>
+  </tbody>
+</table>
