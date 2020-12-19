@@ -9,11 +9,19 @@
         <div class="row">
           <div class="col">
             <h6>Name: {{user.fullName}}</h6> 
-            <h6><span id="incomeTag">Income</span> : {{user.totalIncome}}  <a href="aaaa" id="btnAddIncome" type="button" class="btn btn-outline-primary btn-sm">Add Income</a> </h6> 
+            <h6><span id="incomeTag">Income</span> : {{user.totalIncome}}  
+                <a [routerLink]="[ '/addIncome']" id="btnAddIncome" type="button" class="btn btn-outline-primary btn-sm">Add Income</a> 
+                <a [routerLink]="[ '/rmIncome']" id="btnRmIncome" type="button" class="btn btn-primary btn-sm">Remove Income</a> 
+            </h6> 
           </div>
           <div class="col">
             <h6>Email ID: {{user.email}}</h6> 
-            <h6><span id="ExpTag">Expense</span> : {{user.totalExpense}}  <a id="btnAddExpense" type="button" class="btn btn-outline-danger btn-sm">Add Expense</a> </h6> 
+            <h6><span id="ExpTag">Expense</span> : {{user.totalExpense}}  
+                
+                <a [routerLink]="[ '/addExp']" id="btnAddExpense" type="button" class="btn btn-outline-danger btn-sm">Add Expense</a> 
+                <a [routerLink]="[ '/rmExp']" id="btnRmExpense" type="button" class="btn btn-danger btn-sm">Remove Expense</a> 
+            
+            </h6> 
           </div>
         </div>
     </div>

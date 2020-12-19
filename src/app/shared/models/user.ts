@@ -7,6 +7,7 @@ export interface User {
     fullName: string;
     joinedOn : string;
     Incomes: Income[];
+    password: string;
     Expenditures: Expenditure[]; 
     totalIncome:number;
     totalExpense:number;

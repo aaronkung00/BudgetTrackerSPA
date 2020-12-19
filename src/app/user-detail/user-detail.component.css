@@ -17,5 +17,12 @@ h2 {
 table {
     margin-top: 30px;
     font-size:12px;
-    
+}
+
+#btnRmExpense {
+    margin-left: 10px;
+}
+ 
+#btnRmIncome {
+    margin-left: 10px;
 }

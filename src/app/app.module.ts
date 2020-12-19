@@ -12,6 +12,9 @@ import { AddUserComponent } from './admin/add-user/add-user.component';
 import { AddIncomeComponent } from './admin/add-income/add-income.component';
 import { AddExpenseComponent } from './admin/add-expense/add-expense.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { RmUserComponent } from './admin/rm-user/rm-user.component';
+import { RmIncomeComponent } from './admin/rm-income/rm-income.component';
+import { RmExpenseComponent } from './admin/rm-expense/rm-expense.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     AddUserComponent,
     AddIncomeComponent,
     AddExpenseComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    RmUserComponent,
+    RmIncomeComponent,
+    RmExpenseComponent
   ],
   imports: [
     BrowserModule,

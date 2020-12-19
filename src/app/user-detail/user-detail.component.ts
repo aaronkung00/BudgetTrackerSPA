@@ -4,6 +4,7 @@ import { ApiService } from '../core/services/api.service';
 import { UserService } from '../core/services/user.service';
 import { Expenditure } from '../shared/models/expenditure';
 import { Income } from '../shared/models/income';
+import { User } from '../shared/models/user';
 import { UserDetailResponseModel } from '../shared/models/UserDetailResponseModel';
 
 @Component({
@@ -32,10 +33,7 @@ export class UserDetailComponent implements OnInit {
       this.userId = +p.get('id');
       this.userService.getOneUsers(this.userId).subscribe(s =>{
         this.user = s;
-        console.log(this.ExpsLen);
         console.log(this.user);
-        
-   
       });
     });
    
