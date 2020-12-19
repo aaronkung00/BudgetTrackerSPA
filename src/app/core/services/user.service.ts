@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserDetailResponseModel } from 'src/app/shared/models/UserDetailResponseModel';
 import { User } from '../../shared/models/user';
 import { ApiService } from './api.service';
 
@@ -18,5 +19,7 @@ export class UserService {
     return this.apiService.getOne('users',id);
   }
 
-
+  createUser(user : User) : void {
+    this.apiService.create('users',user);
+  }
 }

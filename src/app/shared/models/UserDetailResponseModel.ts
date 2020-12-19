@@ -1,7 +1,8 @@
 import { Expenditure } from "./expenditure";
 import { Income } from "./income";
 
-export interface User {
+export interface UserDetailResponseModel
+{
     id : number;
     email: string;
     fullName: string;
@@ -10,4 +11,4 @@ export interface User {
     Expenditures: Expenditure[]; 
     totalIncome:number;
     totalExpense:number;
-  } 
+} 

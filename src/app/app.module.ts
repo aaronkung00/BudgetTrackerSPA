@@ -11,6 +11,8 @@ import { HeaderComponent } from './core/layouts/header/header.component';
 import { AddUserComponent } from './admin/add-user/add-user.component';
 import { AddIncomeComponent } from './admin/add-income/add-income.component';
 import { AddExpenseComponent } from './admin/add-expense/add-expense.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { AddExpenseComponent } from './admin/add-expense/add-expense.component';
     HeaderComponent,
     AddUserComponent,
     AddIncomeComponent,
-    AddExpenseComponent
+    AddExpenseComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

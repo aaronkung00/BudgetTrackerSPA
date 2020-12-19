@@ -1,0 +1,80 @@
+
+<div class="container-sm">
+  
+
+    <h2>Account Detail</h2>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <h6>Name: {{user.fullName}}</h6> 
+            <h6><span id="incomeTag">Income</span> : {{user.totalIncome}}  <a href="aaaa" id="btnAddIncome" type="button" class="btn btn-outline-primary btn-sm">Add Income</a> </h6> 
+          </div>
+          <div class="col">
+            <h6>Email ID: {{user.email}}</h6> 
+            <h6><span id="ExpTag">Expense</span> : {{user.totalExpense}}  <a id="btnAddExpense" type="button" class="btn btn-outline-danger btn-sm">Add Expense</a> </h6> 
+          </div>
+        </div>
+    </div>
+
+
+    <div class="row ">
+       
+        <div class="col-6"> 
+              
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                  <th scope="col">S.N</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Remark</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user_inc of user.incomes; index as i">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ user_inc.amount }}</td>
+                  <td>{{ user_inc.description }}</td>
+                  <td>{{ user_inc.incomeDate.substring(0, 10)}}</td>
+                  <td>{{ user_inc.remarks }}</td>
+                </tr>
+                </tbody>
+              </table>
+            
+    
+        </div>
+    
+        <div class="col-6 ">
+           
+            
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                  <th scope="col">S.N</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Remark</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user_exp of user.expenditures; index as i">
+                  <th scope="row">{{  i + 1 }}</th>
+                  <td>{{ user_exp.amount }}</td>
+                  <td>{{ user_exp.description }}</td>
+                  <td>{{ user_exp.expDate.substring(0, 10)}}</td>
+                  <td>{{ user_exp.remarks }}</td>
+                </tr>
+                </tbody>
+              </table>
+       
+        </div>
+    
+    
+    
+    
+    </div>
+</div>

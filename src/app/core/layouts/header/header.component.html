@@ -12,11 +12,17 @@
         <li class="nav-item dropdown">
             <div ngbDropdown>
               <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  User
+                  Admin
                 </a>
                 <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    
+                    <li>
+                        <a ngbDropdownItem class="btn btn-outline-primary btn-sm" [routerLink]="[ '/path']">Add User</a>                       
+                    </li>    
+                    <li>
+                        <a ngbDropdownItem type="button" class="btn btn-outline-danger btn-sm">Remove User</a>
+                    </li>
                     <!--To do something in dropdown-->
+                   
 
                 </div>
             </div>
