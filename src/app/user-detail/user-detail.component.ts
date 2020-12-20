@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnInit {
         this.userService.getOneUsers(this.userId).subscribe(
           s =>{
             this.user = s;
-            console.log(this.user.Expenditures);
+            console.log(this.user);
           },
           (err:any) => console.error(err)
         );

@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
           <div class="col">
-            <h6>Name:{{user.fullName}}</h6> 
+            <h6>Name: <span>{{user.fullName}}</span></h6> 
             <h6><span id="incomeTag">Income</span> : {{user.totalIncome}}  
                 <a [routerLink]="[ '/addIncome']" id="btnAddIncome" type="button" class="btn btn-outline-primary btn-sm">Add Income</a> 
                 <a [routerLink]="[ '/rmIncome']" id="btnRmIncome" type="button" class="btn btn-primary btn-sm">Remove Income</a> 
@@ -41,7 +41,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let user_inc of user.Incomes; index as i">
+                <tr *ngFor="let user_inc of user.incomes; index as i">
                   <th scope="row">{{ i + 1 }}</th>
                   <td>{{ user_inc.amount }}</td>
                   <td>{{ user_inc.description }}</td>
@@ -68,7 +68,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let user_exp of user.Expenditures; index as i">
+                <tr *ngFor="let user_exp of user.expenditures; index as i">
                   <th scope="row">{{ i + 1 }}</th>
                   <td>{{ user_exp.amount }}</td>
                   <td>{{ user_exp.description }}</td>
