@@ -15,6 +15,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { RmUserComponent } from './admin/rm-user/rm-user.component';
 import { RmIncomeComponent } from './admin/rm-income/rm-income.component';
 import { RmExpenseComponent } from './admin/rm-expense/rm-expense.component';
+import { UpdateExpenseComponent } from './admin/update-expense/update-expense.component';
+import { UpdateIncomeComponent } from './admin/update-income/update-income.component';
+import { UpdateUserComponent } from './admin/update-user/update-user.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { RmExpenseComponent } from './admin/rm-expense/rm-expense.component';
     UserDetailComponent,
     RmUserComponent,
     RmIncomeComponent,
-    RmExpenseComponent
+    RmExpenseComponent,
+    UpdateExpenseComponent,
+    UpdateIncomeComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

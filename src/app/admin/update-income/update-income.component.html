@@ -1,0 +1,66 @@
+<div class="container"  >
+    <h3>Create New Income</h3>
+    <form (ngSubmit) = "UpdateIncome()" #loginForm = "ngForm">
+
+        <div class="form-group">
+            <label for="lblUid">Income Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id" 
+              name="id" [(ngModel)] = "updateInc.id"
+            />
+          </div>
+  
+        <div class="form-group">
+          <label for="lblUid">User Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="uid" 
+            name="uid" [(ngModel)] = "updateInc.userId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lblAmt">Amount</label>
+          <input
+          type="text"
+          class="form-control"
+          id="amt"
+          name="amt" [(ngModel)]= "updateInc.amount"
+        />
+        </div>
+  
+        <div class="form-group">
+            <label for="lblDate">Income Date</label>
+            <input
+            type="date"
+            class="form-control"
+            id="dt"
+            name="dt" [(ngModel)]= "updateInc.incomeDate"
+          />
+          </div>
+
+          <div class="form-group">
+            <label for="lblDes">Description</label>
+            <input
+            type="text"
+            class="form-control"
+            id="des"
+            name="des" [(ngModel)]= "updateInc.description"
+          />
+
+          </div>
+          <div class="form-group">
+            <label for="lblAmt">Remarks</label>
+            <input
+            type="text"
+            class="form-control"
+            id="rmk"
+            name="rmk" [(ngModel)]= "updateInc.remarks"
+          />
+          </div>
+  
+        <input type="submit" class="btn btn-primary" value="Update Income"/>
+      </form>
+  </div>
