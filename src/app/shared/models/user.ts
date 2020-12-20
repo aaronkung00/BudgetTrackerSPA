@@ -4,7 +4,7 @@ import { Income } from "./income";
 export interface User {
     id? : number;
     email: string;
-    fullName: string;
+    fullName:string;
     joinedOn : string;
     Incomes: Income[];
     password: string;
