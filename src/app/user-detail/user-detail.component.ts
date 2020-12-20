@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ApiService } from '../core/services/api.service';
 import { UserService } from '../core/services/user.service';
 import { Expenditure } from '../shared/models/expenditure';
@@ -14,11 +15,10 @@ import { UserDetailResponseModel } from '../shared/models/UserDetailResponseMode
 })
 export class UserDetailComponent implements OnInit {
 
-  user : User = {
+  user : UserDetailResponseModel= {
     email: '',
     fullName: '',
     joinedOn : '',
-    password: '',
     Incomes: [] as any[],
     Expenditures: [] as any[]
   };
@@ -30,13 +30,16 @@ export class UserDetailComponent implements OnInit {
 
     ngOnInit(): void {  
 
-      this.route.paramMap.subscribe(p => {
+       this.route.paramMap.subscribe(p => {
         this.userId = +p.get('id');
         this.userService.getOneUsers(this.userId).subscribe(s =>{
           this.user = s;
-
           console.log(this.user);
         });
-    });
+      }
+      );
+
+
   }
+
 }

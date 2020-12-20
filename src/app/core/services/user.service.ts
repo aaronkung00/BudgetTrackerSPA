@@ -17,7 +17,7 @@ export class UserService {
     return this.apiService.getAll('users');
   }
 
-  getOneUsers(id : number) : Observable<User>{
+  getOneUsers(id : number) : Observable<UserDetailResponseModel>{
     return this.apiService.getOne('users', id);
   }
 
