@@ -1,1 +1,18 @@
-<p>rm-expense works!</p>
+<div class="container"  >
+    <h3>Delete User</h3>
+    <form (ngSubmit) = "RemoveExp()" #loginForm = "ngForm">
+  
+        <div class="form-group">
+            
+                    <label for="lblExp">Exp ID
+                    <input
+                    type="number" 
+                    class="form-control"
+                    id="num" 
+                    name="uId" [(ngModel)] = "exp_id"
+                    /></label>
+            
+          </div>     
+        <input type="submit" class="btn btn-primary" value="Remove Expenditure"/>
+      </form>
+  </div>

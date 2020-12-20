@@ -1,39 +1,40 @@
 <div class="container"  >
-    <h3>Add New User</h3>
-    <form (ngSubmit) = "AddUser()" #loginForm = "ngForm">
-        <div class="form-group">
-          <label for="lblEmail">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email" 
-            aria-describedby="emailHelp"
-            name="email"    [(ngModel)] = "new_user.email"  
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
-        </div>
-        <div class="form-group">
-            <label for="lblFullName">Full Name</label>
-            <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"    [(ngModel)] = "new_user.fullName"  
-          />
+  <h3>Create New User</h3>
+  <form (ngSubmit) = "AddUser()" #loginForm = "ngForm">
 
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-          type="password"
+      <div class="form-group">
+        <label for="lblEmail">Email address</label>
+        <input
+          type="email"
           class="form-control"
-          id="password"
-          name="password"  [(ngModel)]="new_user.password" 
+          id="email" 
+          aria-describedby="emailHelp"
+          name="email" [(ngModel)] = "new_user.email"
         />
-   
-        </div>
-        <input type="submit" class="btn btn-primary" value="Create User"/>
-      </form>
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password" [(ngModel)]= "new_user.password"
+      />
+      </div>
+
+      <div class="form-group">
+        <label for="fullname">Name</label>
+        <input
+        type="text"
+        class="form-control"
+        id="fullname"
+        name="fullname" [(ngModel)]= "new_user.fullName"
+      />
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Create User"/>
+    </form>
 </div>

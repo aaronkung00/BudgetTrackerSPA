@@ -34,9 +34,28 @@ export class ApiService {
   }
 
   create(path: string, resource: any, options?: any): Observable<any> {
-    return this.http
-      .post(`${environment.apiUrl}${path}`, resource, { headers: this.headers })
-      .pipe(map((response) => response));
+
+
+    console.log(`${environment.apiUrl}${path}`);
+
+    return this.http.post(`${environment.apiUrl}${path}`, resource, { headers: this.headers }).pipe(map((response) => response));
   }
+
+  delete(path: string): Observable<any> {
+
+
+    console.log(`${environment.apiUrl}${path}`);
+
+    return this.http.delete(`${environment.apiUrl}${path}`, { headers: this.headers }).pipe(map((response) => response));
+  }
+
+  update(path: string, resource: any, options?: any): Observable<any> {
+
+
+    console.log(`${environment.apiUrl}${path}`);
+
+    return this.http.put(`${environment.apiUrl}${path}`, resource, { headers: this.headers }).pipe(map((response) => response));
+  }
+
 
 }

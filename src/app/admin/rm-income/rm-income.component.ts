@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IncomeService } from 'src/app/core/services/income.service';
 
 @Component({
   selector: 'app-rm-income',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RmIncomeComponent implements OnInit {
 
-  constructor() { }
+  income_id : number;
+
+  constructor(private incomeService : IncomeService) { }
 
   ngOnInit(): void {
   }
 
+  RemoveIncome(){
+    console.log(this.income_id);
+    this.incomeService.deleteUser(this.income_id).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err:any) => {
+        console.log(err);
+      }
+    );
+
+  }
 }

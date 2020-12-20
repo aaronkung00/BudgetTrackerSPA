@@ -1,1 +1,18 @@
-<p>rm-user works!</p>
+<div class="container"  >
+    <h3>Delete User</h3>
+    <form (ngSubmit) = "RemoveUser()" #loginForm = "ngForm">
+  
+        <div class="form-group">
+            
+                    <label for="lblEmail">User ID
+                    <input
+                    type="number" 
+                    class="form-control"
+                    id="num" min="1"
+                    name="uId" [(ngModel)] = "user_id"
+                    /></label>
+            
+          </div>     
+        <input type="submit" class="btn btn-primary" value="Remove User"/>
+      </form>
+  </div>

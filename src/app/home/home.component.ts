@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   pagedUsers : User[];
 
   constructor(private userService : UserService) {
-
+    
    }
 
   ngOnInit(): void {

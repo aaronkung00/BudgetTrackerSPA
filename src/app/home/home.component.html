@@ -15,7 +15,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let user of pagedUsers;">
-    <th scope="row">{{ user.id }}</th>
+    <th scope="row">{{ user.id}}</th>
     <td><a  [routerLink]="[ '/users',  user.id  ]">  {{ user.fullName }} </a></td>
     <td>{{ user.email }}</td>
     <td>{{ user.totalIncome | number}}</td>

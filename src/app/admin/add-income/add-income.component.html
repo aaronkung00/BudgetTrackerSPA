@@ -1,1 +1,56 @@
-<p>add-income works!</p>
+<div class="container"  >
+    <h3>Create New Income</h3>
+    <form (ngSubmit) = "AddIncome()" #loginForm = "ngForm">
+  
+        <div class="form-group">
+          <label for="lblUid">User Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="uid" 
+            name="uid" [(ngModel)] = "newIncome.userId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lblAmt">Amount</label>
+          <input
+          type="text"
+          class="form-control"
+          id="amt"
+          name="amt" [(ngModel)]= "newIncome.amount"
+        />
+        </div>
+  
+        <div class="form-group">
+            <label for="lblDate">Income Date</label>
+            <input
+            type="date"
+            class="form-control"
+            id="dt"
+            name="dt" [(ngModel)]= "newIncome.incomeDate"
+          />
+          </div>
+
+          <div class="form-group">
+            <label for="lblDes">Description</label>
+            <input
+            type="text"
+            class="form-control"
+            id="des"
+            name="des" [(ngModel)]= "newIncome.description"
+          />
+
+          </div>
+          <div class="form-group">
+            <label for="lblAmt">Remarks</label>
+            <input
+            type="text"
+            class="form-control"
+            id="rmk"
+            name="rmk" [(ngModel)]= "newIncome.remarks"
+          />
+          </div>
+  
+        <input type="submit" class="btn btn-primary" value="Add Income"/>
+      </form>
+  </div>

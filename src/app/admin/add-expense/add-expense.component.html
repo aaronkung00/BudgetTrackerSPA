@@ -1,1 +1,56 @@
-<p>add-expense works!</p>
+<div class="container"  >
+    <h3>Create New Expenditure</h3>
+    <form (ngSubmit) = "AddExp()" #loginForm = "ngForm">
+  
+        <div class="form-group">
+          <label for="lblUid">User Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="uid" 
+            name="uid" [(ngModel)] = "newExp.userId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lblAmt">Amount</label>
+          <input
+          type="text"
+          class="form-control"
+          id="amt"
+          name="amt" [(ngModel)]= "newExp.amount"
+        />
+        </div>
+  
+        <div class="form-group">
+            <label for="lblDate">Exp Date</label>
+            <input
+            type="date"
+            class="form-control"
+            id="dt"
+            name="dt" [(ngModel)]= "newExp.expDate"
+          />
+          </div>
+
+          <div class="form-group">
+            <label for="lblDes">Description</label>
+            <input
+            type="text"
+            class="form-control"
+            id="des"
+            name="des" [(ngModel)]= "newExp.description"
+          />
+
+          </div>
+          <div class="form-group">
+            <label for="lblAmt">Remarks</label>
+            <input
+            type="text"
+            class="form-control"
+            id="rmk"
+            name="rmk" [(ngModel)]= "newExp.remarks"
+          />
+          </div>
+  
+        <input type="submit" class="btn btn-primary" value="Add Expense"/>
+      </form>
+  </div>

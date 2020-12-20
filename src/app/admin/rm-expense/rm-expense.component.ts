@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpenseService } from 'src/app/core/services/expense.service';
 
 @Component({
   selector: 'app-rm-expense',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RmExpenseComponent implements OnInit {
 
-  constructor() { }
+  exp_id : number;
+
+  constructor(private expService : ExpenseService) { }
 
   ngOnInit(): void {
   }
 
+  RemoveExp(){
+    console.log(this.exp_id );
+    this.expService.deleteExpense(this.exp_id).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err:any) => {
+        console.log(err);
+      }
+    );
+
+  }
 }

@@ -14,41 +14,29 @@ import { UserDetailResponseModel } from '../shared/models/UserDetailResponseMode
 })
 export class UserDetailComponent implements OnInit {
 
-  user : User;
+  user : User = {
+    email: '',
+    fullName: '',
+    joinedOn : '',
+    password: '',
+    Incomes: [] as any[],
+    Expenditures: [] as any[]
+  };
   userId : number;
 
-  //pagination
-  page = 1;
-  pageSize = 4;
-  IncomesLen : number;
-  ExpsLen : number;
-  pagedIncomes : Income[];
-  pagedExps : Expenditure[];
+   
 
   constructor(private userService : UserService, private route : ActivatedRoute) { }
 
-  ngOnInit(): void {  
-    
-    this.route.paramMap.subscribe(p => {
-      this.userId = +p.get('id');
-      this.userService.getOneUsers(this.userId).subscribe(s =>{
-        this.user = s;
-        console.log(this.user);
-      });
+    ngOnInit(): void {  
+
+      this.route.paramMap.subscribe(p => {
+        this.userId = +p.get('id');
+        this.userService.getOneUsers(this.userId).subscribe(s =>{
+          this.user = s;
+
+          console.log(this.user);
+        });
     });
-   
-  }
-
-  /* Pagination building */
-  refreshIncomes() {
-    this.pagedIncomes = this.user.incomes
-      .map((income, i) => ({id: i + 1, ...income}))
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
-  }
-
-  refreshExps() {
-    this.pagedExps = this.user.expenditures
-      .map((expenditure, i) => ({id: i + 1, ...expenditure}))
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-rm-user',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RmUserComponent implements OnInit {
 
-  constructor() { }
+  user_id : number;
+
+  constructor(private userService : UserService) { }
 
   ngOnInit(): void {
+
+  }
+
+
+  RemoveUser(){
+    console.log(this.user_id);
+    this.userService.deleteUser(this.user_id).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err:any) => {
+        console.log(err);
+      }
+    );
   }
 
 }

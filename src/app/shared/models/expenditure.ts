@@ -1,6 +1,6 @@
 export interface Expenditure{
     
-    id:number;
+    id?:number;
     userId:number;
     amount : number;
     description: string;

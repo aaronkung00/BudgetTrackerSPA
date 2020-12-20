@@ -1,7 +1,7 @@
 export interface Income{
-    id:number;
+    id?:number;
     userId:number;
-    amount : number;
+    amount: number;
     description: string;
     incomeDate : string;
     remarks: string ;

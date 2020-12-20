@@ -1,31 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
-import { addUserRequestModel } from 'src/app/shared/models/addUserRequestModel';
-import { UserDetailResponseModel } from 'src/app/shared/models/UserDetailResponseModel';
-import { User } from '../../shared/models/user';
+import { Income } from 'src/app/shared/models/income';
 import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class IncomeService {
 
   constructor(private apiService:ApiService) { }
 
-  getAllUsers() : Observable<User[]>{ 
-    return this.apiService.getAll('users');
+  getAllIncome() : Observable<Income[]>{ 
+    return this.apiService.getAll('income');
   }
 
-  getOneUsers(id : number) : Observable<User>{
-    return this.apiService.getOne('users', id);
+  getOneIncome(id : number) : Observable<Income>{
+    return this.apiService.getOne('income', id);
   }
 
-  createUser(user : addUserRequestModel) : Observable<Boolean> {
+  createUser(inc : Income) : Observable<Boolean> {
 
-    return this.apiService.create('Users/addUser',user).pipe(
+    return this.apiService.create('income',inc).pipe(
       map((response) => {
-
           if(response){
             console.log(response);
             return true;
@@ -33,13 +30,11 @@ export class UserService {
           return false;
       })
     );
-
   }
-
 
   deleteUser(id : number) : Observable<Boolean> {
 
-    return this.apiService.delete('users/'+ id).pipe(
+    return this.apiService.delete('income/'+ id).pipe(
       map((response) => {
           if(response){
             console.log(response);
@@ -50,9 +45,9 @@ export class UserService {
     );
   }
 
-  updateUser(user : addUserRequestModel) : Observable<Boolean> {
+  updateUser(inc : Income) : Observable<Boolean> {
 
-    return this.apiService.update('users',user).pipe(
+    return this.apiService.update('income',inc).pipe(
       map((response) => {
           if(response){
             console.log(response);
@@ -62,5 +57,6 @@ export class UserService {
       })
     );
   }
+
 
 }
